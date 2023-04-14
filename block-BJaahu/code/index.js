@@ -1,26 +1,26 @@
-// Prototypal Pattern Of Object Creation
-// function createQuiz(title,options,index){
-//     let quiz = Object.create(quizMethods);
-//     quiz.title=title;
-//     quiz.options=options;
-//     quiz.index = index;
+Prototypal Pattern Of Object Creation
+function createQuiz(title,options,index){
+    let quiz = Object.create(quizMethods);
+    quiz.title=title;
+    quiz.options=options;
+    quiz.index = index;
 
-//     return quiz;
-// }
+    return quiz;
+}
 
-// let quizMethods = {
-//     isAnswerCorrect(value){
-//         if(this.index == value){
-//             return true;
-//         }
-//         else{
-//             return false;
-//         }
-//     },
-//     getCorrectAnswer(){
-//         return `Correct Answer is: ${this.index}: ${this.options[this.index]}`;
-//     }
-// };
+let quizMethods = {
+    isAnswerCorrect(value){
+        if(this.index == value){
+            return true;
+        }
+        else{
+            return false;
+        }
+    },
+    getCorrectAnswer(){
+        return `Correct Answer is: ${this.index}: ${this.options[this.index]}`;
+    }
+};
 
 // Pseudoclassical Pattern
 function createQuiz(title,options,index){
