@@ -22,12 +22,11 @@ animalMethods = {
 // Dog Methods and Properties
 
 function Dog(name,color,location,numberOfLegs){
-    let dog=Object.create(dogMethods);
-    dog.name = name;
-    dog.color = color;
-    dog.location = location;
-    dog.legs = numberOfLegs;
-    return dog;
+    let obj = Animal(location,numberOfLegs);
+    Object.setPrototypeOf(obj,dogMethods);
+    obj.name = name;
+    obj.color = color;
+    return obj;
 }
 
 dogMethods = {
@@ -49,12 +48,12 @@ Object.setPrototypeOf(dogMethods,animalMethods);
 // Cat Methods and Properties
 
 function Cat(name,colorOfEyes,location,numberOfLegs){
-    let cat=Object.create(catMethods);
-    this.name = name;
-    this.eyeColor = colorOfEyes;
-    this.location = location;
-    this.legs = numberOfLegs;
-    return cat;
+    let obj = Animal(location,numberOfLegs);
+    Object.setPrototypeOf(obj,catMethods);
+    obj.name = name;
+    obj.eyeColor = colorOfEyes;
+    
+    return obj;
 }
 
 catMethods = {
