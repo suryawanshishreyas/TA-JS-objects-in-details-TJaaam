@@ -3,14 +3,20 @@
 `myMap` will behave similar to how the `Array.map` works. To test the implementation use the code below.
 */
 
-// myMap function goes here
+function myMap(currentValue,index,arr=[]){
+  this.currentValue = currentValue;
+  this.index = index;
+  this.arr = arr;
+}
+myMap.prototype = {
+
+}
 
 // Test the myMap function you created above
 
 let numbers = [1, 5, 6, 8, 9];
 let words = 'quick brown fox jumped over a lazy dog'.split(
-  ' '
-);
+  ' ');
 let doubleNum = numbers.myMap(function (num) {
   return num * 2 - 1;
 });
