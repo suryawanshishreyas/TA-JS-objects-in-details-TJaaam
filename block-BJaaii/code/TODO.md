@@ -11,7 +11,49 @@ Queue
 1. Create a class name `Stack` with the following data and methods. Also implement a `length` getter method.
 
 Data:
-
+class Stack{
+    constructor(){
+        this.items = [];
+    }
+    <!-- Push Function -->
+    push(element){
+        this.items.push(element);
+    }
+    <!-- Pop Function -->
+    pop(element){
+        if(this.items.length == 0){
+            return "Empty";
+        }
+        return this.items.pop();
+    }
+    <!-- Peek Function -->
+    peek(index){
+        console.log(this.items[index]);
+        return this.items[this.items.length - 1];
+    }
+    <!-- Reverse Function -->
+    reverse(){
+        let reversed_array = this.items.reverse();
+        return reversed_array;
+    }
+    <!-- isEmpty function -->
+    isEmpty(){
+        if(this.items.length == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    <!-- Display Stack Function -->
+    displayStack(){
+        var data = " ";
+        for(var i=0; i < this.items.length; i++){
+            data += this.items[i] + " ";
+            return data;
+        }
+    }
+}
 - `stack`
 
 Methods:
@@ -49,7 +91,44 @@ console.log(myStack.isEmpty()); // true
 2. Create a class name `Queue` with the following data and methods. Also implement a `length` getter method.
 
 Data:
-
+class Queue{
+    constructor(){
+        this.items = [];
+    }
+    <!-- Enqure Function -->
+    enqueue(item){
+        this.items.push(item);
+    }
+    <!-- Dequeue Function -->
+    dequeue(){
+        this.items.shift();
+    }
+    <!-- Peek Function -->
+    peek(index){
+        if(this.isEmpty()){
+            return this.items[0];
+        }
+        else{
+            return this.items[index];
+        }
+    }
+    <!-- isEmpty function -->
+    isEmpty(){
+        if(this.items.length == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    displayQueue(){
+        var data = "";
+        for(var i = 0; i < this.items.length; i++){
+            data += this.items[i] + " ";
+            return data;
+        }
+    }
+}
 - `queue`
 
 Methods:
