@@ -12,7 +12,8 @@ class Book {
         this.finishedDate = finishedDate;
     }
     markBookAsRead(){
-        return this.isRead = true;
+        this.isRead = true;
+        this.finishedDate = Date.now();
     }
    
 }
