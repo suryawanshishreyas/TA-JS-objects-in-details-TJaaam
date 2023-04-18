@@ -5,15 +5,14 @@
 
 class Book {
     constructor(title,category,author,isRead,finishedDate){
-        this.items = [];
-        this.items.title = title;
-        this.items.category=category;
-        this.items.author = author;
-        this.items.status = isRead;
-        this.items.finishedDate = finishedDate;
+        this.title = title;
+        this.category=category;
+        this.author = author;
+        this.isRead = false;
+        this.finishedDate = finishedDate;
     }
     markBookAsRead(){
-        return this.items.status='true' && this.items.finishedDate = Date.now();
+        return this.isRead = true;
     }
    
 }
@@ -33,27 +32,28 @@ Book class will have the following methods:
 
 1. An array of all the Books
 2. Current read book index
-class BookList extends Book {
-    constructor(title,category,author,isRead,finishedDate,index,allBooks){
-        super(title,category,author,isRead,finishedDate);
-        this.items = [];
-        this.items = allBooks;
-        this.currentPage = index;
+
+class BookList {
+    constructor(){
+        this.books = [];
+        this.currentBookIndex=0;    
     }
-    add([Book]){
-        allBooks.push(Book);
+    add(books=[]){
+        this.books = this.books.concat(books);
     }
     getCurrentBook(){
-        return allBooks.title() && allBooks.index;
+        return this.books[this.currentBookIndex];
     }
     getNextBook(){
-        return allBooks[index + 1].title;
+        this.currentBookIndex = this.currentBookIndex + 1;
+        return this.books[this.currentBookIndex];
     }
     getPrevBook(){
-        return allBooks[index - 1].title;
+        this.currentBookIndex = this.currentBookIndex - 1;
     }
     changeCurrentBook(param){
-        return allBook[index + param].title;
+        this.currentBookIndex = param;
+        return this.currentBookIndex;
     }
 }
 #### BookList Methods
