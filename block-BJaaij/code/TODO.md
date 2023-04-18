@@ -3,6 +3,20 @@
 - [ ] Create a class BookList
 - [ ] Create another class called Book
 
+class Book {
+    constructor(title,category,author,isRead,finishedDate){
+        this.items = [];
+        this.items.title = title;
+        this.items.category=category;
+        this.items.author = author;
+        this.items.status = isRead;
+        this.items.finishedDate = finishedDate;
+    }
+    markBookAsRead(){
+        return this.items.status='true' && this.items.finishedDate = Date.now();
+    }
+   
+}
 #### Each Book should have several properties:
 
 1. Title
@@ -19,7 +33,29 @@ Book class will have the following methods:
 
 1. An array of all the Books
 2. Current read book index
-
+class BookList extends Book {
+    constructor(title,category,author,isRead,finishedDate,index,allBooks){
+        super(title,category,author,isRead,finishedDate);
+        this.items = [];
+        this.items = allBooks;
+        this.currentPage = index;
+    }
+    add([Book]){
+        allBooks.push(Book);
+    }
+    getCurrentBook(){
+        return allBooks.title() && allBooks.index;
+    }
+    getNextBook(){
+        return allBooks[index + 1].title;
+    }
+    getPrevBook(){
+        return allBooks[index - 1].title;
+    }
+    changeCurrentBook(param){
+        return allBook[index + param].title;
+    }
+}
 #### BookList Methods
 
 - [] `add([Book])` will accept an array (list of books). Once the method is called the book will added to the list.
