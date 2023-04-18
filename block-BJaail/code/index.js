@@ -1,8 +1,4 @@
 let button = document.querySelector('button');
-
-
-
-
 class BookList{
     constructor(root,list=[]){
         this.root = root;
