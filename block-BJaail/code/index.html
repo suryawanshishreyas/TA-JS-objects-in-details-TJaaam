@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MyBookList App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flex">
+            <img src="./book.png" class="book">
+            <h1><span class="name">Shreyas</span> <span class="book">Book</span>List</h1>
+        </div>
+        <form>
+            <label for="Title">Title<br><input type="text" id="Title" name='title'></label>
+            <label for="Author">Author<br><input type="text" id="Author" name="author"></label>
+            <label for="ISBN#">ISBN#<br><input type="text" id="ISBN#" name="ISBN"></label>
+            <button type="submit">Add Book</button>
+        </form>
+
+        <div class="books">
+            <ul class="book-list">
+                <li>
+                    <h1></h1>
+                    <p></p>
+                    <button class="form-button">Mark As Read!</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
